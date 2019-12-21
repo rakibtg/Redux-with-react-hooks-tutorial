@@ -1,23 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import User from "./User";
+
+const netRequest = () => {
+  console.log("Network Request");
+};
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [fruit, updateFruit] = useState("apple");
+
+  // componentDidMount life-cycle
+  useEffect(() => {
+    netRequest();
+  }, []);
+
+  // componentDidUpdate life-cycle
+  useEffect(() => {
+    console.log("componentDidUpdate life-cycle");
+  });
+
+  // shouldComponentUpdate life-cycle
+  useEffect(() => {
+    console.log("Count gets an update");
+  }, [count]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          You have {count} {fruit}!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        {count < 1 && <User />}
+        <button
+          onClick={() => {
+            const incrementedValue = count + 1;
+            setCount(incrementedValue);
+            if (incrementedValue > 1) {
+              updateFruit("apples");
+            }
+          }}
         >
-          Learn React
-        </a>
+          +1
+        </button>
+        <p>Subscribe and follow me @rakibtg</p>
       </header>
     </div>
   );
