@@ -1,5 +1,3 @@
-# Tutorial on React Hooks: https://youtu.be/AFzLarIcHgE
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
