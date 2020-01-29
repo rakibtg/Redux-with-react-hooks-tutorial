@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import User from "./User";
+import ReduxCounter from "./ReduxCounter";
 
 const netRequest = () => {
   console.log("Network Request");
@@ -43,6 +44,8 @@ function App() {
         >
           +1
         </button>
+        <h2>Redux Store:</h2>
+        <ReduxCounter />
         <p>Subscribe and follow me @rakibtg</p>
       </header>
     </div>

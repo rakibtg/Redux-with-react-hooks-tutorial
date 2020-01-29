@@ -8,5 +8,5 @@ export default function User(props) {
     };
   });
 
-  return <h2>Users!!</h2>;
+  return <h4>Users!!</h4>;
 }
